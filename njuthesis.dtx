@@ -2512,28 +2512,28 @@ December\fi
 % 使用|titlesec|宏包提供的\cs{titleformat}和\cs{titlespacing}命令可以方便地设置标题
 % 的样式：
 %    \begin{macrocode}
-\titleformat{\chapter}[hang]
+\titleformat{\chapter}[block]
             {\centering\zihao{1}\bfseries}
             {\chaptertitlename}{1em}{}
 \titlespacing{\chapter}
              {0pt}
              {*4}
              {*3}
-\titleformat{\section}[hang]
+\titleformat{\section}[block]
             {\zihao{-2}\bfseries}
             {\thesection}{1em}{}
 \titlespacing{\section}
              {0pt}
              {*3.5}
              {*2.3}
-\titleformat{\subsection}[hang]
+\titleformat{\subsection}[block]
             {\zihao{3}\bfseries}
             {\thesubsection}{1em}{}
 \titlespacing{\subsection}
              {0pt}
              {*3}
              {*1.5}
-\titleformat{\subsubsection}[hang]
+\titleformat{\subsubsection}[block]
             {\zihao{-3}\bfseries}
             {\thesubsubsection}{1em}{}
 \titlespacing{\subsubsection}

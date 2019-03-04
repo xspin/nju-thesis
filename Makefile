@@ -19,7 +19,7 @@ SAMPLECONTENTS=$(SAMPLE).tex
 SAMPLEBIB=$(SAMPLE).bib
 INSTITUTE_LOGO=njulogo.eps
 INSTITUTE_NAME=njuname.eps
-TEXMFLOCAL=$(shell get_texmf_dir.sh)
+TEXMFLOCAL=/usr/local/share/texmf
 
 .PHONY: all clean cls doc sample
 
@@ -59,7 +59,10 @@ $(SAMPLE).pdf: $(CLS) $(INSTITUTE_LOGO) $(INSTITUTE_NAME) $(BST_FILE) $(SAMPLE).
 
 ###### install
 
-install: $(SOURCE) $(CLS) $(INSTITUTE_LOGO) $(INSTITUTE_NAME) $(BST_FILE) $(PACKAGE).pdf $(SAMPLE).pdf
+# install: $(SOURCE) $(CLS) $(INSTITUTE_LOGO) $(INSTITUTE_NAME) $(BST_FILE) $(PACKAGE).pdf $(SAMPLE).pdf
+install:
+	@echo "install ..."
+	@echo "TeX local dir $(TEXMFLOCAL)"
 	mkdir -p $(TEXMFLOCAL)/tex/latex/njuthesis
 	cp -rvf $(SOURCES) $(CLS) $(INSTITUTE_LOGO) $(INSTITUTE_NAME) $(TEXMFLOCAL)/tex/latex/njuthesis/
 	mkdir -p $(TEXMFLOCAL)/doc/latex/njuthesis
