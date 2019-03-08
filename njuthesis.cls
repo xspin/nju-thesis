@@ -72,7 +72,6 @@
 \DeclareGraphicsExtensions{.pdf,.eps,.jpg,.png}
 \RequirePackage{caption}
 \RequirePackage{float}
-\RequirePackage{subfig}
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
@@ -361,8 +360,6 @@
 \renewcommand*{\thefigure}{\dashnumber{\thechapter}{\arabic{figure}}}
 \renewcommand*{\thetable}{\dashnumber{\thechapter}{\arabic{table}}}
 \renewcommand*{\theequation}{\dashnumber{\thechapter}{\arabic{equation}}}
-\renewcommand*{\thesubfigure}{(\alph{subfigure})}
-\renewcommand*{\thesubtable}{(\alph{subtable})}
 \newtheoremstyle{plain}% name
                 {1em}%      Space above, empty = `usual value'
                 {1em}%      Space below

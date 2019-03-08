@@ -1408,7 +1408,7 @@
 %
 % |subfigure|宏包已经不再推荐使用，改用新的|subfig|宏包支持插入子图和子表。
 %    \begin{macrocode}
-\RequirePackage{subfig}
+%\RequirePackage{subfig}
 %    \end{macrocode}
 %
 % 使用|array|宏包扩展表格的列选项。
@@ -2394,8 +2394,8 @@ December\fi
 \renewcommand*{\thefigure}{\dashnumber{\thechapter}{\arabic{figure}}}
 \renewcommand*{\thetable}{\dashnumber{\thechapter}{\arabic{table}}}
 \renewcommand*{\theequation}{\dashnumber{\thechapter}{\arabic{equation}}}
-\renewcommand*{\thesubfigure}{(\alph{subfigure})}
-\renewcommand*{\thesubtable}{(\alph{subtable})}
+%\renewcommand*{\thesubfigure}{(\alph{subfigure})}
+%\renewcommand*{\thesubtable}{(\alph{subtable})}
 %    \end{macrocode}
 %
 % 定义常用的数学定理环境及其样式。
