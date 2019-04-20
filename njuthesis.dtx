@@ -222,6 +222,12 @@
 %  v1.2.1  & 2017/12/24 & 胡海星 & 修正一些小问题，去除不需要的|dtxlogos|宏包；
 %                                 兼容TeX Live 2017 \\
 %  v1.2.2 & 2018/08/07 & 胡海星 & 更新中文字体下载链接 \\
+
+%  v1.3.0 & 2019/03/04 & xspin & 修正章节编号不显示问题，修正长短标题显示问题\\
+%  v1.3.1 & 2019/03/08 & xspin & 删掉|subfig|包，修改|algorithm|环境为|algo|避免冲突，dtx字体及默认字体改为|winfonts|\\
+%  v1.3.2 & 2019/03/11 & xspin & 修改|subsubsection|字体为|\kaisu|\\
+%  v1.3.3 & 2019/03/14 & xspin & 修正自动英文日期月日间无空格问题\\
+%  v1.3.4 & 2019/04/12 & xspin & 修改|subsubsection|字体为|\bfseries|\\
 % \bottomrule
 % \end{longtable}
 % \end{center}
@@ -1307,8 +1313,8 @@
 % {\njuthesis}宏包的默认选项为|adobefonts|。
 %    \begin{macrocode}
 %<*cls>
-\newif\ifnjut@adobefonts\njut@adobefontstrue
-\newif\ifnjut@winfonts\njut@winfontsfalse
+\newif\ifnjut@adobefonts\njut@adobefontsfalse
+\newif\ifnjut@winfonts\njut@winfontstrue
 \newif\ifnjut@linuxfonts\njut@linuxfontsfalse
 \newif\ifnjut@macfonts\njut@macfontsfalse
 \newif\ifnjut@backinfo\njut@backinfotrue
@@ -1841,8 +1847,8 @@ in\\
 %
 % 定义学位颁发机构的校徽和校名图片文件名：
 %    \begin{macrocode}
-\newcommand*{\njut@cap@institute@logo}{njulogo.eps}
-\newcommand*{\njut@cap@institute@name}{njuname.eps}
+\newcommand*{\njut@cap@institute@logo}{nju-thesis/njulogo.eps}
+\newcommand*{\njut@cap@institute@name}{nju-thesis/njuname.eps}
 %    \end{macrocode}
 %
 % \subsection{字段默认值定义}
@@ -1939,7 +1945,7 @@ September\or
 October\or
 November\or
 December\fi
-\number\day, \number\year%
+\ \number\day, \number\year%
 }
 %    \end{macrocode}
 %
@@ -2036,7 +2042,7 @@ December\fi
 % 在进行其他配置之前先载入预定义的字符串常量配置。
 %    \begin{macrocode}
 %<*cls>
-\input{njuthesis.cfg}
+\input{nju-thesis/njuthesis.cfg}
 %    \end{macrocode}
 %
 % \subsection{字体设置}
@@ -2440,7 +2446,7 @@ December\fi
   \item[\hskip\labelsep\textbf{#1}\@addpunct{:}]\ignorespaces
 }{\endtrivlist\@endpefalse}
 
-\newtheorem{algorithm}{\njut@cap@algorithm}[chapter]
+\newtheorem{algo}{\njut@cap@algorithm}[chapter]
 %    \end{macrocode}
 %
 % 修改上面定义的各定理环境的编号样式：
@@ -2513,7 +2519,7 @@ December\fi
 % 的样式：
 %    \begin{macrocode}
 \titleformat{\chapter}[block]
-            {\centering\zihao{1}\bfseries}
+            {\centering\zihao{-1}\bfseries}
             {\chaptertitlename}{1em}{}
 \titlespacing{\chapter}
              {0pt}
@@ -2947,7 +2953,7 @@ December\fi
 %
 % 使用|gbt7714-2005.bst|作为参考文献样式。
 %    \begin{macrocode}
-\bibliographystyle{gbt7714-2005}
+\bibliographystyle{nju-thesis/gbt7714-2005}
 %    \end{macrocode}
 %
 % 使用符合\std{GB/T 7714-2005}规范的参考文献引用样式。
@@ -3316,7 +3322,7 @@ December\fi
   }
   \vspace{5mm}
   \begin{center}
-    {\heiti\zihao{-3}\njut@cap@abstract@abstractname}
+    {\heiti\zihao{-2}\njut@cap@abstract@abstractname}
   \end{center}%
   \normalsize\par%
 }{%
@@ -3379,7 +3385,7 @@ December\fi
   }
   \vspace{5mm}
   \begin{center}
-    {\bf\zihao{-3}\njut@cap@abstract@en@abstractname}
+    {\bf\zihao{-2}\njut@cap@abstract@en@abstractname}
   \end{center}%
   \normalsize\par%
 }{%
@@ -3761,10 +3767,10 @@ December\fi
 \newcommand*{\njut@enfn@mono}{Courier New}
 
 % 选择中文字体
-\newcommand*{\njut@zhfn@songti}{Adobe Song Std}
-\newcommand*{\njut@zhfn@heiti}{Adobe Heiti Std}
-\newcommand*{\njut@zhfn@kaishu}{Adobe Kaiti Std}
-\newcommand*{\njut@zhfn@fangsong}{Adobe Fangsong Std}
+\newcommand*{\njut@zhfn@songti}{SimSun}
+\newcommand*{\njut@zhfn@heiti}{SimHei}
+\newcommand*{\njut@zhfn@kaishu}{KaiTi}
+\newcommand*{\njut@zhfn@fangsong}{FangSong}
 
 % 定义中文字体
 \setCJKfamilyfont{song}{\njut@zhfn@songti}

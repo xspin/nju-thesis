@@ -26,8 +26,9 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{njuthesis.cls}
  [2018/08/07 v1.2.2 Document Class for the Degree Papers of Nanjing University]
-\newif\ifnjut@adobefonts\njut@adobefontstrue
-\newif\ifnjut@winfonts\njut@winfontsfalse
+
+\newif\ifnjut@adobefonts\njut@adobefontsfalse
+\newif\ifnjut@winfonts\njut@winfontstrue
 \newif\ifnjut@linuxfonts\njut@linuxfontsfalse
 \newif\ifnjut@macfonts\njut@macfontsfalse
 \newif\ifnjut@backinfo\njut@backinfotrue
@@ -400,7 +401,7 @@
   \item[\hskip\labelsep\textbf{#1}\@addpunct{:}]\ignorespaces
 }{\endtrivlist\@endpefalse}
 
-\newtheorem{algorithm}{\njut@cap@algorithm}[chapter]
+\newtheorem{algo}{\njut@cap@algorithm}[chapter]
 \renewcommand*{\thedefinition}{\dashnumber{\thechapter}{\arabic{definition}}}
 \renewcommand*{\thetheorem}{\dashnumber{\thechapter}{\arabic{theorem}}}
 \renewcommand*{\theaxiom}{\dashnumber{\thechapter}{\arabic{axiom}}}
@@ -427,7 +428,7 @@
 \renewcommand*{\chaptername}{\njut@cap@chaptername}
 \renewcommand*{\appendixname}{\njut@cap@appendixname}
 \titleformat{\chapter}[block]
-            {\centering\zihao{1}\bfseries}
+            {\centering\zihao{-1}\bfseries}
             {\chaptertitlename}{1em}{}
 \titlespacing{\chapter}
              {0pt}
@@ -650,7 +651,7 @@
      {\def\@noitemerr
        {\@latex@warning{Empty `thebibliography' environment}}%
       \endlist}
-\bibliographystyle{gbt7714-2005}
+\bibliographystyle{nju-thesis/gbt7714-2005}
 \setcitestyle{super,square}
 \renewcommand\NAT@citesuper[3]{%
 \ifNAT@swa%
@@ -934,7 +935,7 @@
   }
   \vspace{5mm}
   \begin{center}
-    {\heiti\zihao{-3}\njut@cap@abstract@abstractname}
+    {\heiti\zihao{-2}\njut@cap@abstract@abstractname}
   \end{center}%
   \normalsize\par%
 }{%
@@ -971,7 +972,7 @@
   }
   \vspace{5mm}
   \begin{center}
-    {\bf\zihao{-3}\njut@cap@abstract@en@abstractname}
+    {\bf\zihao{-2}\njut@cap@abstract@en@abstractname}
   \end{center}%
   \normalsize\par%
 }{%
